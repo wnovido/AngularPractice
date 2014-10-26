@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>BMI Calculator</title>
+</head>
+<body>
+    <p>Enter Height in feet: <input type="number" ng-model="heightFt" min=0>
+       Enter Height in inches: <input type="number" ng-model="heightInch" min=0/></input></p>
+    <p>Enter Weight in pounds: <input type="number" ng-model="weightLb" min=0/></input></p>
+    <p><b>BMI: {{(weightLb / ((heightFt * 12 + heightInch) * (heightFt * 12 + heightInch)) * 703)}} </b></p>
+
+    <script src="angular.min.js"></script>
+</body>
+</html>
