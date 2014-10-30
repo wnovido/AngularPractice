@@ -9,19 +9,9 @@ app.controller('BMIController',function($scope) {
         $scope.weightLb = 0;
 
         $scope.calcBMI = function() {
-            return $scope.weightLb/Math.pow($scope.heightFt * 12 + $scope.heightInch,2)*703;
-        };
-
-        $scope.setHeightFt = function (heightFt) {
-            $scope.heightFt = heightFt;
-            $scope.bmi = $scope.calcBMI();
-        };
-        $scope.setHeightInch = function (heightInch) {
-            $scope.heightInch = heightInch;
-            $scope.bmi = $scope.calcBMI();
-        };
-        $scope.setWeightLb = function (weightLb) {
-            $scope.weightLb = weightLb;
-            $scope.bmi = $scope.calcBMI();
+            if ($scope.heightFt === null || $scope.heightInch === null || $scope.weightLb === null)
+                $scope.bmi = 0;
+            else
+                $scope.bmi = $scope.weightLb/Math.pow($scope.heightFt * 12 + $scope.heightInch,2)*703;
         };
 });
